@@ -1,2 +1,2 @@
 # SeleniumPractice
-__ seleniumpractice.com __ test cases automation
+**seleniumpractice.com**  test cases automation using Java (Netbeans 8.2), **Selenium** and **TestNG**.
