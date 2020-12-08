@@ -5,12 +5,13 @@
  */
 package POM;
 
+import Base.Utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
- *
+ * Contact page class.
  * @author Artūras
  */
 public class ContactPage {
@@ -32,52 +33,52 @@ public class ContactPage {
     /***** LOCATORS GETTERS *****/
     
     public WebElement getSubjectHeadingDrowDown() {
-        return driver.findElement(By.id("id_contact"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//select[@id='id_contact']"), 5);
     }
     
     public WebElement getSubjectHeadingPopUp1() {
-        return driver.findElement(By.xpath("//p[@id='desc_contact2']"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//p[@id='desc_contact2']"), 5);
     }
     
     public WebElement getSubjectHeadingPopUp2() {
-        return driver.findElement(By.xpath("//p[@id='desc_contact1']"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//p[@id='desc_contact1']"), 5);
     }
     
     public WebElement getEmailField() {
-        return driver.findElement(By.id("email"));
+        return Utilities.waitToBeClickable(driver, By.id("email"), 5);
     }
     
     public WebElement getOrderRefDropDown() {
-        return driver.findElement(By.xpath("//select[@name='id_order']"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//select[@name='id_order']"), 5);
     }
     
     public WebElement getAttachFileField() {
-        return driver.findElement(By.xpath("//input[@id='fileUpload']"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//input[@id='fileUpload']"), 5);
     }
     
     public WebElement getMessageTextArea() {
-        return driver.findElement(By.id("message"));
+        return Utilities.waitToBeClickable(driver, By.id("message"), 5);
     }
     
     public WebElement getSuccessMessage() { 
-        return driver.findElement(By.xpath("//p[@class='alert alert-success']"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//p[@class='alert alert-success']"), 5);
     }
     
     public WebElement getSumbitButton() {
-        return driver.findElement(By.id("submitMessage"));
+        return Utilities.waitToBeClickable(driver, By.id("submitMessage"), 5);
     }
     //--------------------------------------------------------------------------
     /***** ERROR MESSAGES *****/
     
     public WebElement getEmailInvalidError() {
-        return driver.findElement(By.xpath("//li[normalize-space()='Invalid email address.']"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//li[normalize-space()='Invalid email address.']"), 5);
     }
     
     public WebElement getBlankMessageError() {
-        return driver.findElement(By.xpath("//li[normalize-space()='The message cannot be blank.']"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//li[normalize-space()='The message cannot be blank.']"), 5);
     }
     
     public WebElement getSubjectHeadingUnselectedError() {
-        return driver.findElement(By.xpath("//li[normalize-space()='Please select a subject from the list provided.']"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//li[normalize-space()='Please select a subject from the list provided.']"), 5);
     }
 }

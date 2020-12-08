@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Test_Cases;
+package Base;
 
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +18,11 @@ public class TestBase {
     
     protected WebDriver driver;
     ResourceBundle resources;
-    
+    //--------------------------------------------------------------------------
+    /**
+     * Initializes Chrome browser driver, maximizes window and opens a web page.
+     * @param URL - web page to get
+     */
     public void openChrome(String URL) {
         resources = ResourceBundle.getBundle("Properties.GlobalVariables");
         System.setProperty("webdriver.chrome.driver", resources.getString("pathToChromeDriver"));
@@ -27,11 +31,18 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(URL);
     }
-    
+    //--------------------------------------------------------------------------
+    /**
+     * Quits test.
+     */
     public void quitChrome() {
         driver.quit();
     }
-    
+    //--------------------------------------------------------------------------
+    /**
+     * Gets chrome browser driver.
+     * @return chrome driver
+     */
     public WebDriver getDriver() {
         return driver;
     }

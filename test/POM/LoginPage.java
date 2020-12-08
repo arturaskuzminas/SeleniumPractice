@@ -5,12 +5,14 @@
  */
 package POM;
 
+import Base.Utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
- *
+ * Login page class.
+ * 
  * @author Artūras
  */
 public class LoginPage {
@@ -58,15 +60,15 @@ public class LoginPage {
     /***** LOCATORS GETTERS *****/
     
     public WebElement getEmailField() {
-        return driver.findElement(By.id("email")); 
+        return Utilities.waitToBeClickable(driver, By.id("email"), 5); 
     }
 
     public WebElement getPasswordField() {
-        return driver.findElement(By.id("passwd"));
+        return Utilities.waitToBeClickable(driver, By.id("passwd"), 5);
     }
 
     public WebElement getLoginButton() {
-        return driver.findElement(By.xpath("//span[normalize-space()='Sign in']"));
+        return Utilities.waitToBeClickable(driver, By.xpath("//span[normalize-space()='Sign in']"), 5);
     }
 
     public WebElement getSignInForm() {
@@ -76,32 +78,32 @@ public class LoginPage {
     /***** ERRORS *****/
     
     public WebElement getEmailRequiredError() {
-        return driver.findElement(By.xpath("//li[contains(text(), \"An email address required.\")]"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//li[contains(text(), \"An email address required.\")]"), 5);
     }
 
     public WebElement getEmailInvalidError() {
-        return driver.findElement(By.xpath("//li[contains(text(), \"Invalid email address.\")]"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//li[contains(text(), \"Invalid email address.\")]"), 5);
     }
 
     public WebElement getAuthenticationFailedError() {
-        return driver.findElement(By.xpath("//li[contains(text(), \"Authentication failed.\")]"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//li[contains(text(), \"Authentication failed.\")]"), 5);
     }
 
     public WebElement getPasswordRequiredError() {
-        return driver.findElement(By.xpath("//li[contains(text(), \"Password is required.\")]"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//li[contains(text(), \"Password is required.\")]"), 5);
     }
 
     public WebElement getInvalidPasswordError() {
-        return driver.findElement(By.xpath("//li[contains(text(), \"Invalid password\")]"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//li[contains(text(), \"Invalid password\")]"), 5);
     }
     //--------------------------------------------------------------------------
     /***** HIGHLIGHTED ERRORS *****/
     
     public WebElement getEmailHighlightedRed() {
-        return driver.findElement(By.xpath("//div[@class=\"form-group form-error\"]//input[@id=\"email\"]"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//div[@class=\"form-group form-error\"]//input[@id=\"email\"]"), 5);
     }
 
     public WebElement getEmailHighlightedGreen() {
-        return driver.findElement(By.xpath("//div[@class=\"form-group form-ok\"]//input[@id=\"email\"]"));
+        return Utilities.waitForElementPresence(driver, By.xpath("//div[@class=\"form-group form-ok\"]//input[@id=\"email\"]"), 5);
     }
 }

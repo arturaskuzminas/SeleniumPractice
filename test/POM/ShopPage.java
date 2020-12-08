@@ -5,13 +5,15 @@
  */
 package POM;
 
+import Base.Utilities;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
- *
+ * Shop page class.
+ * 
  * @author Artūras
  */
 public class ShopPage {
@@ -22,6 +24,11 @@ public class ShopPage {
         this.driver = driver;
     }
     //--------------------------------------------------------------------------
+    /**
+     * Checks whether results in Shop page match search query.
+     * @param searchQuery - text to search for
+     * @return true | false
+     */
     public boolean isFoundProductListMatchQuery(String searchQuery) {
         List<WebElement> itemNames = driver.findElements(getItemName());
         for (WebElement element : itemNames) {
@@ -33,9 +40,18 @@ public class ShopPage {
         }
         return true;
     }
-    //--------------------------------------------------------------------------
-    public By getItemName() {
+    
+    private By getItemName() {
         return By.cssSelector(".product-container");
     }
     //--------------------------------------------------------------------------
+    /***** LOCATORS GETTERS *****/
+    
+    public WebElement getMyStoreLogo() {
+        return Utilities.waitToBeClickable(driver, By.xpath("//img[@alt='My Store']"), 5);
+    }
+    
+    public WebElement getNoResultsFoundError() {
+        return Utilities.waitForElementPresence(driver, By.xpath("//p[@class='alert alert-warning']"), 5);
+    }
 }
