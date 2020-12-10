@@ -30,7 +30,7 @@ public class ContactPage {
         getAttachFileField().sendKeys(filePath);     
     }
     //--------------------------------------------------------------------------
-    /***** LOCATORS GETTERS *****/
+    /***** SELECTORS GETTERS *****/
     
     public WebElement getSubjectHeadingDrowDown() {
         return Utilities.waitForElementPresence(driver, By.xpath("//select[@id='id_contact']"), 5);

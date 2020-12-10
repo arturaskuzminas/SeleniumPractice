@@ -36,7 +36,7 @@ public class HomePage {
         getSearchButton().click();
     }
     //--------------------------------------------------------------------------
-    /***** LOCATORS GETTERS *****/
+    /***** SELECTORS GETTERS *****/
     
     public WebElement getSearchTxtBox() {
         return Utilities.waitToBeClickable(driver, By.id("search_query_top"), 5);

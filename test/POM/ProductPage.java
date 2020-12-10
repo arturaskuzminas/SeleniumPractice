@@ -41,7 +41,7 @@ public class ProductPage {
         getCommentContentField().sendKeys(message);
     }
     //--------------------------------------------------------------------------
-    /***** LOCATORS GETTERS *****/
+    /***** SELECTORS GETTERS *****/
 
     public WebElement getWriteReviewButton() {
         return Utilities.waitToBeClickable(driver, By.xpath("//a[normalize-space()='Write a review']"), 5);

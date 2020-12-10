@@ -56,8 +56,22 @@ public class LoginPage {
         password.clear();
         password.sendKeys(pass);
     }
+    
+    public void setRegEmailField(String mail) {
+        WebElement email = this.getRegEmailField();
+        email.clear();
+        email.sendKeys(mail);
+    }
     //--------------------------------------------------------------------------
-    /***** LOCATORS GETTERS *****/
+    /***** SELECTORS GETTERS *****/
+    
+    public WebElement getRegEmailField() {
+        return Utilities.waitToBeClickable(driver, By.id("email_create"), 5);
+    }
+    
+    public WebElement getRegEmailButton() {
+        return Utilities.waitToBeClickable(driver, By.id("SubmitCreate"), 5);
+    }
     
     public WebElement getEmailField() {
         return Utilities.waitToBeClickable(driver, By.id("email"), 5); 

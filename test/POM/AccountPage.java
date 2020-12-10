@@ -21,7 +21,7 @@ public class AccountPage {
         this.driver = driver;
     }
     //--------------------------------------------------------------------------
-    /***** LOCATORS GETTERS *****/
+    /***** SELECTORS GETTERS *****/
     
     public WebElement getWelcomeMessage() {
         return Utilities.waitForElementPresence(driver, By.className("info-account"), 5);

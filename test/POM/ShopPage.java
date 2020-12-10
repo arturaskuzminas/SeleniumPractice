@@ -45,7 +45,7 @@ public class ShopPage {
         return By.cssSelector(".product-container");
     }
     //--------------------------------------------------------------------------
-    /***** LOCATORS GETTERS *****/
+    /***** SELECTORS GETTERS *****/
     
     public WebElement getMyStoreLogo() {
         return Utilities.waitToBeClickable(driver, By.xpath("//img[@alt='My Store']"), 5);
