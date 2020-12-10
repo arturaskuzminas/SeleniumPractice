@@ -46,7 +46,7 @@ public class RegistrationTest {
     }
     //--------------------------------------------------------------------------
     /*
-    1) Check behaviour with filling valid values to registration form 
+    1) Check behaviour by filling valid values to registration form 
     */
     @Test
     public void validRegistration() {
@@ -77,6 +77,6 @@ public class RegistrationTest {
     */
     @AfterClass
     public void closeAll() throws Exception {
-        //base.quitChrome();
+        base.quitChrome();
     }
 }
