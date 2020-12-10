@@ -23,54 +23,100 @@ public class RegistrationPage {
         this.driver = driver;
     }
     //--------------------------------------------------------------------------
+    /**
+     * Sets first name field text.
+     * 
+     * @param name - name value
+     */
     public void setFirstNameField(String name) {
         WebElement nF = this.getCustomerFirstNameField();
         nF.clear();
         nF.sendKeys(name);
     }
     
+    /**
+     * Sets last name field text.
+     * 
+     * @param surname - surname value
+     */
     public void setLastNameField(String surname) {
         WebElement lnF = this.getCustomerLastNameField();
         lnF.clear();
         lnF.sendKeys(surname);
     }
     
+    /**
+     * Sets password field text.
+     * 
+     * @param password - password value
+     */
     public void setPasswordField(String password) {
         WebElement pF = this.getPasswordField();
         pF.clear();
         pF.sendKeys(password);
     }
     
+    /**
+     * Sets adress field text.
+     * 
+     * @param adress - adress value
+     */
     public void setAdressField(String adress) {
         WebElement aF = this.getAdressField();
         aF.clear();
         aF.sendKeys(adress);
     }
     
+    /**
+     * Sets city field text.
+     * 
+     * @param city - city value
+     */
     public void setCityField(String city) {
         WebElement cF = this.getCityField();
         cF.clear();
         cF.sendKeys(city);
     }
     
+    /**
+     * Sets zip code field text.
+     * 
+     * @param postalCode - postalCode value
+     */
     public void setZipCodeField(String postalCode) {
         WebElement pF = this.getZipCodeField();
         pF.clear();
         pF.sendKeys(postalCode);
     }
     
+    /**
+     * Sets mobile phone field text.
+     * 
+     * @param mobilePhone - mobilePhone value
+     */
     public void setMobilePhoneField(String mobilePhone) {
         WebElement mF = this.getMobilePhoneField();
         mF.clear();
         mF.sendKeys(mobilePhone);
     }
     
+    /**
+     * Sets adress alias field text.
+     * 
+     * @param alias - alias value
+     */
     public void setAdressAliasField(String alias) {
         WebElement aF = this.getAdressAlias();
         aF.clear();
         aF.sendKeys(alias);
     }
     
+    /**
+     * Chooses date values from dropdown's.
+     * @param day - day value
+     * @param month - month value
+     * @param year - year value
+     */
     public void setDate(String day, String month, String year) {
         Select selectDay = new Select(this.getBirthDropdownDay());
         Select selectMonth = new Select(this.getBirthDropdownMonth());
@@ -81,11 +127,21 @@ public class RegistrationPage {
         selectYear.selectByValue(year);
     }
     
+    /**
+     * Chooses state value from dropdown.
+     * 
+     * @param state - state value
+     */
     public void setState(String state) {
         Select selectState = new Select(this.getStateDropDown());
         selectState.selectByVisibleText(state);
     }
     
+    /**
+     * Chooses country value from dropdown.
+     * 
+     * @param country - country value
+     */
     public void setCountry(String country) {
         Select selectCountry = new Select(this.getCountryDropDown());
         selectCountry.selectByVisibleText(country);

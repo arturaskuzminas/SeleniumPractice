@@ -46,8 +46,7 @@ public class RegistrationTest {
     }
     //--------------------------------------------------------------------------
     /*
-    Valid login test
-    Fill all fields with valid values
+    1) Check behaviour with filling valid values to registration form 
     */
     @Test
     public void validRegistration() {

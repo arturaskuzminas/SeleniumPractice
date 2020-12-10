@@ -12,7 +12,9 @@
             </test-roots>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>adress</word>
             <word>clickable</word>
+            <word>dropdown's</word>
             <word>webelement</word>
         </spellchecker-wordlist>
     </configuration>
